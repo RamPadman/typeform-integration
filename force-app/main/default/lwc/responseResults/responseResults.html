@@ -1,0 +1,15 @@
+<template>
+    <div >
+         <lightning-accordion allow-multiple-sections-open
+                         onsectiontoggle={handleSectionToggle}
+                         active-section-name={activeSections}>
+        <lightning-accordion-section name="A" label="Accordion Title A">
+            <p>This is the content area for section A.</p>
+            <template for:each={respRecords.answers} for:item='responses'>
+                </template>
+            
+        </lightning-accordion-section>
+    </lightning-accordion>
+     </div>
+
+</template>

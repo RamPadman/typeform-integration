@@ -1,0 +1,41 @@
+<template>
+    <!--Search input -->
+    <lightning-card  variant="Narrow"  title="Account Search" icon-name="standard:account">
+    <div onkeyup={handleKeyUp}>
+        <lightning-layout>
+             <lightning-layout-item padding="around-small" size="12">
+            <lightning-input name="enter-search" type="search" value ={inputValue}>
+        </lightning-input>
+                 </lightning-layout-item>
+        </lightning-layout>
+        
+    </div>
+    <!--Search results-->
+    <div>
+    <p if:true={queryTerm}>
+        <template if:true={showLkp}>
+        <c-lkp-srch-result onselect = {handleSelect} records = {records}></c-lkp-srch-result>
+            </template>
+    </p>
+    <!--Actual Results  <c-response-results></c-response-results>-->
+        <lightning-layout>
+             <lightning-layout-item padding="around-small" size="12">
+    <lightning-accordion allow-multiple-sections-open  onsectiontoggle={handleSectionToggle} active-section-name={activeSections}>
+        <template for:each={mapOfValues} for:item="keyValue">
+        <lightning-accordion-section name="A" label={keyValue.key} key ={keyValue.key}>
+            <template for:each={keyValue.value} for:item="value">
+               <ul class="slds-list--dotted" key = {value}>
+                   <li>{value.questions}</li>
+                   </ul>
+                <li class="slds-p-left_large" key = {value}>{value.answers}</li>
+            </template>
+        </lightning-accordion-section>
+            </template>
+    </lightning-accordion>
+            </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <!--No result displayed-->
+
+        </lightning-card>
+</template>
