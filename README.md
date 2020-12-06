@@ -1,4 +1,4 @@
-# Type form Integration with Salesforce REST callout
+# Type form Integration with Salesforce via REST API
 Typeform is a web-based platform used to create and store any kind of form (surveys, reviews, inscriptions to events, etc) and their responses.
 As part of this requirement, I am making a call to the typeform platform via REST API to retrieve all the workspaces, forms and questions in salesforce through a batch scheduled to run daily.
 
