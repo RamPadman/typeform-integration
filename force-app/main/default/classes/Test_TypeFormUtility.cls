@@ -1,5 +1,5 @@
 @isTest
-public class Test_WefoxTypeFormUtility {
+public class Test_TypeFormUtility {
     @testSetup
     static void createTestData(){
         Account acct = new Account(Name = 'unlinked answers');
@@ -8,7 +8,7 @@ public class Test_WefoxTypeFormUtility {
     //positive usecase
     static testMethod void checkTypeFormAPI() {
         createTestData();
-        Test.setMock(HttpCalloutMock.class, new WeFoxMockHTTPRespGenerator());
+        Test.setMock(HttpCalloutMock.class, new MockHTTPRespGenerator());
         Test.startTest();
         TypeFormAPIBatch batchApex = new TypeFormAPIBatch();
         Database.executeBatch(batchApex);
@@ -20,11 +20,11 @@ public class Test_WefoxTypeFormUtility {
 	//negative usecase logic to follow
     static testMethod void checkScheduler() {
         createTestData();
-        Test.setMock(HttpCalloutMock.class, new WeFoxMockHTTPRespGenerator());
+        Test.setMock(HttpCalloutMock.class, new MockHTTPRespGenerator());
         Test.startTest();
         //peFormAPIBatch batchApex = new TypeFormAPIBatch();
         //abase.executeBatch(batchApex);
-        WeFox_ScheduleApex scheduleApx = new WeFox_ScheduleApex();
+        TypeForm_ScheduleApex scheduleApx = new TypeForm_ScheduleApex();
 		String sch = '0 0 * * * ?'; 
         system.schedule('TypeFormScheduler', sch, scheduleApx); 
         Test.stopTest();

@@ -1,12 +1,12 @@
 /*
-@Company :  Wefox Group
+@Company :  
 @Purpose : Utility class to handle logic related totypeforms
 
 ***************************************** Modification Log *****************************************
 Modified By          Modified on          
 Ram Padmanabhan      7-04-2020          
 */
-public class Wefox_TypeFormAPIUtility {
+public class TypeFormAPIUtility {
     //record to be inserted after all callouts
     WorkspaceWrapper workspaceWrapInst;
     FormsWrapper formWrapperInst;

@@ -1,4 +1,4 @@
-public class WeFoxMockHTTPRespGenerator implements HttpCalloutMock {
+public class MockHTTPRespGenerator implements HttpCalloutMock {
 	public HTTPResponse respond(HTTPRequest req) 
         { 
             String strBody;
@@ -45,7 +45,7 @@ public class WeFoxMockHTTPRespGenerator implements HttpCalloutMock {
                     +'"metadata": {'
                     +'"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36",'
                     +'"platform": "other",'
-                    +'"referer": "https://wefoxgroup.typeform.com/to/Q7dTxN",'
+                    +'"referer": "https://group.typeform.com/to/Q7dTxN",'
                     +'"network_id": "219e3c07c5",'
                     +'"browser": "default"'
                    +' },'

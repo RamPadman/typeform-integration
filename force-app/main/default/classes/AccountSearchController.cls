@@ -1,5 +1,5 @@
 /*
-@Company :  Wefox Group
+@Company : 
 @Purpose : Handle UI for LWC components
 
 ***************************************** Modification Log *****************************************

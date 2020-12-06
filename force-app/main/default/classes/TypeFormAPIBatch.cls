@@ -1,5 +1,5 @@
 /*
-@Company :  Wefox Group
+@Company :  
 @Purpose : Batch to be process typeforms insertion
 
 ***************************************** Modification Log *****************************************
@@ -17,12 +17,12 @@ global class TypeFormAPIBatch implements Database.Batchable<String>,Database.Sta
         List<String> formList = new List<String>();
         try{
         //get workspace and form details and pass the form Id for iteration in execute method
-        jsonTotalWrapper.workspaceAPIMap = Wefox_TypeFormAPIUtility.getWorkspaceDetails();
+        jsonTotalWrapper.workspaceAPIMap = TypeFormAPIUtility.getWorkspaceDetails();
         //get form details for each workspace
-        jFormWrapper = Wefox_TypeFormAPIUtility.getFormsDetails(jsonTotalWrapper.workspaceAPIMap.keySet());
+        jFormWrapper = TypeFormAPIUtility.getFormsDetails(jsonTotalWrapper.workspaceAPIMap.keySet());
         jsonTotalWrapper.wrkspaceFormWrap = jFormWrapper.wrkspaceFormWrap;
         //iterate scope using formlist
-        formList.addAll(Wefox_TypeFormAPIUtility.getAllFormIdset(jFormWrapper));
+        formList.addAll(TypeFormAPIUtility.getAllFormIdset(jFormWrapper));
         } catch(Exception ex) {
             //insert exceptions into custom log object
             //logic to follow
@@ -62,7 +62,7 @@ global class TypeFormAPIBatch implements Database.Batchable<String>,Database.Sta
     global void finish(Database.BatchableContext info){
         //response parsing 
         try{
-        Wefox_TypeFormAPIUtility.parseResponse(jsonTotalWrapper);
+        TypeFormAPIUtility.parseResponse(jsonTotalWrapper);
         } catch(Exception ex) {
             //insert exceptions into custom log object
             //logic to follow

@@ -46,15 +46,15 @@ global class TypeFormAuth extends Auth.AuthProviderPluginClass {
     }
     // This method is responsible to get the user information used for authentication from the external api
     global Auth.UserData getUserInfo(Map<String, String> authProviderConfiguration, Auth.AuthProviderTokenResponse response) {
-        //to be replaced with wefox admin url endpoint
+        //to be replaced with *** admin url endpoint
          return new Auth.UserData(
-        'wefoxId',
-        'WefoxFirstName',
-        'WefoxLirstName',
-        'WefoxFullName',
+        'Id',
+        'FirstName',
+        'LirstName',
+        'FullName',
         null,
         null, 
-        'Wefox Admin',
+        'Admin',
         'locale',
         'TypeForm',
         'loginURL',
